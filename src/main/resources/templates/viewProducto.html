@@ -11,38 +11,43 @@
                     <h1 class="text-center mb-4">Registro de Producto</h1>
                     <form th:action="@{/successProducto}" th:object="${producto}" method="post" class="p-4 border rounded bg-light">
                         <div class="row">
-                            <div class="col-6 mb-3">
-                                <label for="nombre" class="form-label">Nombre del Producto</label>
-                                <input type="text" id="nombre" th:field="*{nombre}" class="form-control" required>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating">
+                                    <input type="text" id="nombre" th:field="*{nombre}" class="form-control" required>
+                                    <label for="nombre" class="form-label">Nombre del Producto</label>
+                                </div>
+                                <div class="form-floating mt-3">
+                                    <input type="date" id="fechaCaducidad" th:field="*{fechaCaducidad}" class="form-control" required>
+                                    <label for="fechaCaducidad" class="form-label">Fecha de Caducidad</label>
+                                </div>
+                                <div class="form-floating mt-3">
+                                    <input type="number" id="stockMinimo" th:field="*{stockMinimo}" min="1" class="form-control" required>
+                                    <label for="stockMinimo" class="form-label">Stock Mínimo</label>
+                                </div>
+                                <div class="form-floating mt-3">
+                                    <input type="number" id="stockMaximo" th:field="*{stockMaximo}" class="form-control" required>
+                                    <label for="stockMaximo" class="form-label">Stock Máximo</label>
+                                </div>
                             </div>
-                            <div class="col-6 mb-3">
-                                <label for="fechaCaducidad" class="form-label">Fecha de Caducidad</label>
-                                <input type="date" id="fechaCaducidad" th:field="*{fechaCaducidad}" class="form-control" required>
-                            </div>
-                            <div class="col-6 mb-3">
-                                <label for="stockMinimo" class="form-label">Stock Mínimo</label>
-                                <input type="number" id="stockMinimo" th:field="*{stockMinimo}" class="form-control" required>
-                            </div>
-                            <div class="col-6 mb-3">
-                                <label for="stockMaximo" class="form-label">Stock Máximo</label>
-                                <input type="number" id="stockMaximo" th:field="*{stockMaximo}" class="form-control" required>
-                            </div>
-                            <div class="col-6 mb-3">
-                                <label for="precioUnitario" class="form-label">Precio Unitario</label>
-                                <input type="number" step="0.01" id="precioUnitario" th:field="*{precioUnitario}" class="form-control" required>
-                            </div>
-                            <div class="col-6 mb-3">
-                                <label for="categoria" class="form-label">Categoría</label>
-                                <input type="text" id="categoria" th:field="*{categoria}" class="form-control" required>
-                            </div>
-                            <div class="col-6 mb-3">
-                                <label for="marca" class="form-label">Marca</label>
-                                <input type="text" id="marca" th:field="*{marca}" class="form-control" required>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating">
+                                    <input type="number" step="0.01" id="precioUnitario" th:field="*{precioUnitario}" class="form-control" required>
+                                    <label for="precioUnitario" class="form-label">Precio Unitario</label>
+                                </div>
+                                <div class="form-floating mt-3">
+                                    <input type="text" id="categoria" th:field="*{categoria}" class="form-control" required>
+                                    <label for="categoria" class="form-label">Categoría</label>
+                                </div>
+                                <div class="form-floating mt-3">
+                                    <input type="text" id="marca" th:field="*{marca}" class="form-control" required>
+                                    <label for="marca" class="form-label">Marca</label>
+                                </div>
                             </div>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary w-100">Registrar</button>
                         </div>
+
                     </form>
                 </div>
             </div>

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class ProductoController {
 
-    @GetMapping("/viewProducto")
+    @GetMapping("/")
     public String viewProducto(Model model) {
         model.addAttribute("producto", new Producto());
         return "viewProducto";
